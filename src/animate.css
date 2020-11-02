@@ -1,0 +1,64 @@
+.scaleIn {
+    animation: fade 0.5s;
+}
+@keyframes fade {
+    from {
+        opacity: 0;
+        transform: scale(0, 0);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1, 1);
+    }
+}
+.qrsvg svg {
+    margin: auto;
+}
+.fadeIn {
+    animation: opac 0.5s;
+}
+@keyframes opac {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+.navSlide {
+    animation: slide 0.7s ease;
+}
+@keyframes slide {
+    from {
+        opacity: 0;
+        margin-left: -100%;
+    }
+    to {
+        opacity: 1;
+        margin-left: 0;
+    }
+}
+.navClose {
+    animation: close 1s ease;
+}
+@keyframes close {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+        margin-left: -100%;
+        display: none !important;
+    }
+}
+.fadeOut {
+    animation: fadeout 1s;
+}
+@keyframes fadeout {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
