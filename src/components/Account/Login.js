@@ -13,7 +13,7 @@ export default function Login() {
     const [queryParams, setQueryParams] = useQueryParams();
 
     const initForm = {
-        userId: "",
+        email: "",
         password: "",
     };
     const [form, setForm] = useState(initForm);
@@ -36,7 +36,7 @@ export default function Login() {
     function validateInputs() {
         let err = "";
         let formValid = true;
-        if (form.userId === "" || form.password === "") {
+        if (form.email === "" || form.password === "") {
             err = "Admission no. / Password is empty";
             formValid = false;
         }
@@ -67,9 +67,9 @@ export default function Login() {
                         if (queryParams && queryParams.redirect) {
                             navigate(queryParams.redirect);
                         }
-                        // window.location.reload();
+                        window.location.reload();
                     } else {
-                        setFormError("Check your userId and password");
+                        setFormError("Check your email and password");
                         setFormLoading(false);
                     }
                 })
@@ -95,20 +95,20 @@ export default function Login() {
                     <div className="mb-4">
                         <label
                             className="block text-gray-700 text-sm font-bold mb-2"
-                            htmlFor="userId">
-                            Admission No.
+                            htmlFor="email">
+                            Email Id
                         </label>
                         <input
                             ref={myInput}
-                            aria-label="Admission No."
-                            name="userId"
+                            aria-label=" Email Id"
+                            name="email"
                             type="text"
-                            value={form.userId}
+                            value={form.email}
                             onChange={handleChange}
                             className={`appearance-none border ${
                                 formError ? "border-red-500" : ""
                             } rounded w-full py-2 px-3 text-gray-700 bg-gray-200 leading-tight focus:outline-none focus:shadow-outline`}
-                            placeholder="Admission No."
+                            placeholder=" Email Id"
                         />
                     </div>
                     <div className="mb-2">

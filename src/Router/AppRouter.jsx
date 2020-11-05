@@ -4,18 +4,17 @@ import Home from "../components/Dashboard/Home";
 import NavBar from "../components/Navbars/NavBar";
 
 const routes = {
-    "/home": () => <Home />,
+    "/": () => <Home />,
 };
 
 const links = [
     {
-        link: "/home",
+        link: "/",
         title: "Home",
         icon: "",
     },
 ];
 export default function AppRouter() {
-    useRedirect("/", "/home");
     const pages = useRoutes(routes);
     !pages && navigate("/");
     return (

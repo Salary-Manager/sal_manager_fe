@@ -4,7 +4,7 @@ export const postRegister = (form) => {
     return fireRequest("register", [], form);
 };
 export const postLogin = (form) => {
-    return fireRequest("login", [form.type], form);
+    return fireRequest("login", [], form);
 };
 
 export const changePassword = (form) => {

@@ -18,6 +18,7 @@ function App() {
             const access = localStorage.getItem("login_access_token");
             if (access) {
                 const res = await dispatch(getCurrentUser());
+                console.log(res);
                 if (!status.aborted && res && res.statusCode === 200) {
                     setUser(res.data);
                 }
@@ -38,8 +39,10 @@ function App() {
 
     if (currentUser && currentUser.data) {
         // console.log("user:", currentUser.data.data.type);
-        if (currentUser.data.data.type === USER_TYPES.HOD.type) {
+        if (currentUser.data.data.type === "user") {
             return <AppRouter />;
+        } else {
+            return <PublicRouter />;
         }
     } else {
         return <PublicRouter />;
